@@ -1,0 +1,49 @@
+@use "variables";
+
+.calculator {
+  max-width: 40rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: variables.$color-primary;
+  margin-top: 2rem;
+
+  &__display {
+    background-color: variables.$color-display;
+    height: 5rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    text-align: right;
+    font-size: 4rem;
+    font-weight: bold;
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(6rem, 1fr));
+    grid-template-rows: repeat(5, minmax(6rem, 1fr));
+  }
+
+  &__button {
+    cursor: pointer;
+    margin: 0.2rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 3rem;
+
+    &:hover {
+      background-color: variables.$color-bg-btn;
+      color: variables.$color-boton;
+    }
+  }
+}
+
+#clear {
+  grid-column: span 2;
+  background-color: variables.$color-clear;
+}
+
+#title {
+  text-transform: uppercase;
+  margin-top: 2rem;
+}
